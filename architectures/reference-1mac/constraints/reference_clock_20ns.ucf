@@ -1,0 +1,5 @@
+# Reference constraint for synthesis/timing comparison only.
+# 20 ns = 50 MHz reference clock target. This is NOT a claim about board clock.
+# No LOC pin assignments are included because the board pinout is unavailable.
+NET "clk" TNM_NET = "clk_grp";
+TIMESPEC "TS_clk" = PERIOD "clk_grp" 20 ns HIGH 50%;

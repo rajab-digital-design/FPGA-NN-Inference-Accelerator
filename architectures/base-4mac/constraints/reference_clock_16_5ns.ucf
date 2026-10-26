@@ -1,0 +1,6 @@
+# Timing experiment constraint for synthesis / MAP / PAR / TRACE comparison.
+# 16.5 ns corresponds to approximately 60.606 MHz.
+# This is a timing target, not a claim about board clock or I/O timing.
+# No LOC pin assignments are included because the board pinout is unavailable.
+NET "clk" TNM_NET = "clk_grp";
+TIMESPEC "TS_clk" = PERIOD "clk_grp" 16.5 ns HIGH 50%;

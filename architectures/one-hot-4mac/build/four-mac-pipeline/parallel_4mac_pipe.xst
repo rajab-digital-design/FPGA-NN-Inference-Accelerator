@@ -1,0 +1,10 @@
+# Xilinx ISE 14.7 / XST synthesis script
+# Part: Spartan-3 XC3S400, package PQ208, speed grade -4
+# 4-MAC hidden layer with registered 1-MAC pipelined output; 16.5 ns timing experiment.
+run
+-ifn parallel_4mac_pipe.prj
+-ifmt VHDL
+-ofn parallel_4mac_pipe
+-ofmt NGC
+-p xc3s400-4-pq208
+-top nn_accelerator_4x8x1_synth_top

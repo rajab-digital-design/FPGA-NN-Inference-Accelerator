@@ -1,0 +1,261 @@
+# onerror {quit -code 1}
+# onbreak {quit -code 1}
+# if {[file exists work]} {vdel -lib work -all}
+# vlib work
+# vmap work work
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work work 
+# Modifying modelsim.ini
+# vcom -work work -2002 -explicit rtl/Input_Memory_Generic.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:51 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/Input_Memory_Generic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity input_memory_generic
+# -- Compiling architecture rtl of input_memory_generic
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/Input_Register_Buffer.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/Input_Register_Buffer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity input_register_buffer
+# -- Compiling architecture rtl of input_register_buffer
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/Weight_Memory_DualPort_Generic.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/Weight_Memory_DualPort_Generic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity weight_memory_dualport_generic
+# -- Compiling architecture rtl of weight_memory_dualport_generic
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/Scheduler_4MAC_DualPort.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/Scheduler_4MAC_DualPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity scheduler_4mac_dualport
+# -- Compiling architecture rtl of scheduler_4mac_dualport
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/MAC_Array_Optimized_Masked.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/MAC_Array_Optimized_Masked.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mac_array_optimized_masked
+# -- Compiling architecture rtl of mac_array_optimized_masked
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit baselines/Output_Layer_1MAC_Sequential_FIXED5.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit baselines/Output_Layer_1MAC_Sequential_FIXED5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity output_layer_1mac_sequential
+# -- Compiling architecture rtl of output_layer_1mac_sequential
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/Output_Layer_1MAC_Pipelined.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/Output_Layer_1MAC_Pipelined.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity output_layer_1mac_pipelined
+# -- Compiling architecture rtl of output_layer_1mac_pipelined
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/NN_Accelerator_4MAC_DualPort.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/NN_Accelerator_4MAC_DualPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity nn_accelerator_4mac_dualport
+# -- Compiling architecture structural of nn_accelerator_4mac_dualport
+# -- Loading entity input_memory_generic
+# -- Loading entity input_register_buffer
+# -- Loading entity weight_memory_dualport_generic
+# -- Loading entity scheduler_4mac_dualport
+# -- Loading entity mac_array_optimized_masked
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/NN_Accelerator_4x8x1_DualPort.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/NN_Accelerator_4x8x1_DualPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity nn_accelerator_4x8x1_dualport
+# -- Compiling architecture structural of nn_accelerator_4x8x1_dualport
+# -- Loading entity nn_accelerator_4mac_dualport
+# -- Loading entity output_layer_1mac_pipelined
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/NN_Accelerator_1MAC_Hidden_Sequential.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/NN_Accelerator_1MAC_Hidden_Sequential.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity nn_accelerator_1mac_hidden_sequential
+# -- Compiling architecture structural of nn_accelerator_1mac_hidden_sequential
+# -- Loading entity input_memory_generic
+# -- Loading entity input_register_buffer
+# -- Loading entity weight_memory_dualport_generic
+# End time: 15:42:52 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit rtl/NN_Accelerator_1x8x1_Sequential.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:52 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit rtl/NN_Accelerator_1x8x1_Sequential.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity nn_accelerator_1x8x1_sequential
+# -- Compiling architecture structural of nn_accelerator_1x8x1_sequential
+# -- Loading entity nn_accelerator_1mac_hidden_sequential
+# -- Loading entity output_layer_1mac_sequential
+# End time: 15:42:53 on Oct 17,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -work work -2002 -explicit tb/NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC.vhd
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 15:42:53 on Oct 17,2026
+# vcom -reportprogress 300 -work work -2002 -explicit tb/NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC
+# -- Compiling architecture tb of NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC
+# -- Loading entity nn_accelerator_4x8x1_dualport
+# -- Loading entity nn_accelerator_1x8x1_sequential
+# End time: 15:42:53 on Oct 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c work.NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC
+# vsim -c work.NN_Accelerator_Parallel_vs_Sequential_RealNetwork_tb_FIXED5_PIPELINED4MAC 
+# Start time: 15:42:53 on Oct 17,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac(tb)#1
+# Loading work.nn_accelerator_4mac_dualport(structural)#1
+# Loading work.nn_accelerator_1mac_hidden_sequential(structural)#1
+# run 10 us
+# ** Note: ============================================================
+#    Time: 0 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: REAL MATLAB NETWORK BENCHMARK
+#    Time: 0 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: PARALLEL 4-MAC WITH PIPELINED OUTPUT vs SEQUENTIAL 1-MAC
+#    Time: 0 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: 4 INPUTS -> 8 HIDDEN -> ReLU -> 1 OUTPUT
+#    Time: 0 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: ============================================================
+#    Time: 0 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Region: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac/P_DUT/HIDDEN/INPUT_BUFFER/GEN_FOUR_INPUT_ONEHOT/GEN_DECODE(3)
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Region: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac/P_DUT/HIDDEN/INPUT_BUFFER/GEN_FOUR_INPUT_ONEHOT/GEN_DECODE(2)
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Region: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac/P_DUT/HIDDEN/INPUT_BUFFER/GEN_FOUR_INPUT_ONEHOT/GEN_DECODE(1)
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Region: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac/P_DUT/HIDDEN/INPUT_BUFFER/GEN_FOUR_INPUT_ONEHOT/GEN_DECODE(0)
+# ** Note: ALL REAL PARAMETERS LOADED INTO BOTH DUTs
+#    Time: 2165 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: PARALLEL DUT DONE
+#    Time: 2475 ns  Iteration: 2  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: SEQUENTIAL DUT DONE
+#    Time: 2755 ns  Iteration: 2  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: ============================================================
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: OUTPUT COMPARISON
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: P N1..N8 = -150,-12,272,-158,-75,44,-354,-75
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: S N1..N8 = -150,-12,272,-158,-75,44,-354,-75
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: ============================================================
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: PERFORMANCE
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel hidden running cycles      = 9
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel hidden running cycles include setup/control; use the measured count above.
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel group-transition markers      = 2
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel hidden actual MAC cycles  = 8
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel prefetch events           = 1
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: 4-MAC pipelined output running cycles = 10
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Parallel processing cycles         = 19
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Sequential hidden running cycles      = 40
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Sequential hidden PRIME/setup cycles = 8
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Sequential hidden actual MAC cycles  = 32
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Sequential output MAC cycles         = 8
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Sequential processing cycles         = 48
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Reference workload: 32 hidden MAC operations + 8 output MAC operations per architecture; 4-MAC output is pipelined.
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Reference operation counts: sequential hidden 32 MAC operations; parallel hidden 8 MAC time slots.
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Measured end-to-end compute speedup = 2.526316e+00x
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Measured compute-window reduction = 6.041667e+01%
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: TOTAL CHECK FAILURES = 0
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: Cycle values above are measured observations for FIXED5; the pipelined 4-MAC output is expected to use 10 running cycles and a 19-cycle processing window.
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: ============================================================
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: PASS: FIXED5 REAL MATLAB NETWORK VALIDATION WITH 4-MAC PIPELINED OUTPUT
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: PASS: PIPELINED 4-MAC AND SEQUENTIAL 1-MAC MATCH EXPECTED HIDDEN, RELU, AND FINAL OUTPUT VALUES
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# ** Note: ============================================================
+#    Time: 2756 ns  Iteration: 0  Instance: /nn_accelerator_parallel_vs_sequential_realnetwork_tb_fixed5_pipelined4mac
+# transcript off
+# End time: 15:42:59 on Oct 17,2026, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 4

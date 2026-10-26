@@ -1,0 +1,12 @@
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=12, margin="0.22,0.13"];
+ edge [color="#66778A", penwidth=1.6, arrowsize=.85];
+ sim [label="modelsim\nFunctional behavior and cycle assertions", fillcolor="#E8F1FF"];
+ xst [label="XST\nSynthesis"];
+ map [label="MAP\nSlices, FFs, LUTs, multipliers"];
+ par [label="PAR\nPlacement and routing"];
+ trace [label="TRACE\nTiming slack and minimum period", fillcolor="#E8F7ED"];
+ board [label="Physical FPGA board validation\nNot included in this repository", fillcolor="#FFEBEB", color="#E69A9A"];
+ sim -> xst -> map -> par -> trace -> board [style=dashed];
+}

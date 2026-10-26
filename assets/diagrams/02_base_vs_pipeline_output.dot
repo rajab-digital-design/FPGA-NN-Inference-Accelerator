@@ -1,0 +1,7 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=12, margin="0.2,0.12"];
+ edge [color="#66778A", penwidth=1.5, arrowsize=.8];
+ subgraph cluster_b { label="Base: sequential output path"; style="rounded,filled"; fillcolor="#FFEEEE"; color="#E9A0A0"; bh [label="Hidden output register"]; bm [label="MUX + ReLU + W2"]; bx [label="Multiplier"]; bs [label="Q8.8 shift + add"]; br [label="Accumulator register"]; bh -> bm -> bx -> bs -> br; }
+ subgraph cluster_p { label="Pipeline: registered stages"; style="rounded,filled"; fillcolor="#EDF7EE"; color="#83B895"; ph [label="Select + ReLU + weight"]; pr1 [label="Operand register"]; px [label="Multiplier"]; pr2 [label="Product register"]; ps [label="Shift + add"]; pr3 [label="Accumulator register"]; ph -> pr1 -> px -> pr2 -> ps -> pr3; }
+}

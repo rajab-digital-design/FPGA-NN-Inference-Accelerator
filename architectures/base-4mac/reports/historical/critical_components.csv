@@ -1,0 +1,19 @@
+sequence,stage,delay_type,delay_ns,physical_or_logical_resource,interpretation
+1,Source hidden register clock-to-Q,Tcko,0.72,UUT/hidden_r4<19>,Source register clock-to-Q delay
+2,Net from hidden_r4,net,1.287,UUT/hidden_r4_19,Routing delay
+3,Neuron-selection mux logic,Tif5,0.796,UUT/OUTPUT/Mmux__varindex0000_4_f510,Neuron-selection mux delay
+4,Mux interconnect,net,0.0,UUT/OUTPUT/Mmux__varindex0000_4_f510,Routing delay
+5,Second mux stage,Tif6y,0.342,UUT/OUTPUT/_varindex0000<19>,Second-stage mux delay
+6,High-fanout net (fanout=19),net,1.268,UUT/OUTPUT/_varindex0000<19>,High-fanout routing delay
+7,ReLU/operand-selection logic,Tilo,0.608,UUT/OUTPUT/hidden_relu_v_mux0000<14>,ReLU and operand selection
+8,Net into multiplier,net,1.215,UUT/OUTPUT/hidden_relu_v_mux0000<14>,Routing delay
+9,Hardware multiplier,Tmult,4.78,MULT18X18_X0Y0,Multiplier; largest individual component
+10,Multiplier output net,net,1.112,UUT/OUTPUT/Mmult_scaled_v_mult0000_submult_0_30,Routing delay
+11,Product/scale carry logic,Topcyg,1.039,UUT/OUTPUT/Madd_scaled...,Product scaling carry logic
+12,Carry propagation,Tciny,0.923,UUT/OUTPUT/scaled_v_mult0000<31>,Product carry propagation
+13,Product-to-accumulator net,net,1.054,UUT/OUTPUT/scaled_v_mult0000<32>,Routing delay
+14,Accumulator adder carry logic,Topcyf,1.027,UUT/OUTPUT/Maccum_acc_r_cy<24>,Accumulator carry logic
+15,Accumulator carry bypass,Tbyp,0.128,UUT/OUTPUT/acc_r<26>,Accumulator carry bypass
+16,Accumulator carry bypass,Tbyp,0.128,UUT/OUTPUT/acc_r<28>,Accumulator carry bypass
+17,Final carry / endpoint register timing,Tcinck,1.005,UUT/OUTPUT/acc_r_31,Accumulator endpoint register timing
+TOTAL,Register-to-register critical path,,17.432,TWR reported total=17.432 ns,Violates the 16.5 ns internal timing constraint

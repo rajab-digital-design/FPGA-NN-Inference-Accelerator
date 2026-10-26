@@ -1,0 +1,14 @@
+# Parent architecture: base-4mac
+# Interpretation: Top of 4x8x1 network connects `output_layer_1mac_pipelined` instead of sequential; other 4-MAC synthesis RTL files unchanged.
+# NOTE: no RTL files modified when creating this diff.
+--- architectures/base-4mac/rtl/NN_Accelerator_4x8x1_DualPort.vhd
++++ architectures/pipeline-4mac/rtl/NN_Accelerator_4x8x1_DualPort.vhd
+@@ -237,7 +237,7 @@
+     relu_n7 <= (others => '0') when hidden_r7(19) = '1' else hidden_r7;
+     relu_n8 <= (others => '0') when hidden_r8(19) = '1' else hidden_r8;
+ 
+-    OUTPUT : entity work.output_layer_1mac_sequential
++    OUTPUT : entity work.output_layer_1mac_pipelined
+         port map (
+             clk => clk,
+             rst => rst,

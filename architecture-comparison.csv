@@ -1,0 +1,5 @@
+﻿arch,period,slack,cycles,slices,ff,lut,mult,status,fmax_mhz,conditional_compute_ns
+Base,17.432,-0.932,17,967,782,1377,6,timing fail at 16.5ns,57.3658,296.344
+Pipeline,16.084,0.416,19,986,849,1406,6,timing pass,62.1736,305.596
+One-Hot,16.355,0.145,19,1019,911,1410,6,timing pass; worse than pipeline,61.1434,310.745
+Fanout,15.104,1.396,19,994,853,1419,6,timing pass; best period,66.2076,286.976

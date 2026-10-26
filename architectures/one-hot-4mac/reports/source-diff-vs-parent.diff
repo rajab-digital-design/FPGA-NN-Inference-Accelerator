@@ -1,0 +1,95 @@
+# Parent architecture: pipeline-4mac
+# Interpretation: One-hot decode/mask used for four-entry Input Buffer and enablement in 4-MAC hidden subsystem.
+# NOTE: no RTL files modified when creating this diff.
+--- architectures/pipeline-4mac/rtl/Input_Register_Buffer.vhd
++++ architectures/one-hot-4mac/rtl/Input_Register_Buffer.vhd
+@@ -6,7 +6,10 @@
+     generic (
+         DATA_WIDTH : integer := 16;
+         NUM_INPUTS : integer := 21;
+-        ADDR_WIDTH : integer := 6
++        ADDR_WIDTH : integer := 6;
++        -- Opt-in four-input decode experiment. Defaults to the original
++        -- implementation to preserve all other design branches.
++        OPTIMIZE_FOUR_INPUT_READ : boolean := false
+     );
+     port (
+         clk : in std_logic;
+@@ -70,12 +73,54 @@
+ begin
+ 
+     ----------------------------------------------------------------
++    -- EXPERIMENT: for a 4-element input vector only, explicitly decode
++    -- the full read_index into four mutually exclusive selectors and
++    -- OR together four bit-masked words.  The aim is to let XST place
++    -- shared address decode locally instead of an inferred 4x16
++    -- variable-index distributed-RAM read.  This is a P&R hypothesis,
++    -- not a validated timing improvement.  No clocked logic is added.
++    -- Other sizes and non-opt-in instances use the proven original path.
++    ----------------------------------------------------------------
++    GEN_FOUR_INPUT_ONEHOT : if OPTIMIZE_FOUR_INPUT_READ and NUM_INPUTS = 4 generate
++        signal select_word : std_logic_vector(3 downto 0);
++    begin
++        GEN_DECODE : for k in 0 to 3 generate
++        begin
++            select_word(k) <= '1' when read_index = to_unsigned(k, ADDR_WIDTH)
++                              else '0';
++        end generate;
++
++        process(buffer_reg, select_word, read_index)
++            variable value_v : signed(DATA_WIDTH-1 downto 0);
++        begin
++            -- Preserve the original simulation fallback for U/X/Z/etc.
++            -- synthesis translate_off
++            if has_metavalue(read_index) then
++                data_out <= buffer_reg(0);
++            else
++            -- synthesis translate_on
++                value_v := (others => '0');
++                for k in 0 to 3 loop
++                    for b in 0 to DATA_WIDTH-1 loop
++                        value_v(b) := value_v(b) or
++                                      (buffer_reg(k)(b) and select_word(k));
++                    end loop;
++                end loop;
++                data_out <= value_v;
++            -- synthesis translate_off
++            end if;
++            -- synthesis translate_on
++        end process;
++    end generate;
++
++    ----------------------------------------------------------------
+     -- Combinational read from the internal input register buffer.
+     -- Power-of-two depths use an address slice with exactly the legal
+     -- index width, which supports distributed-RAM inference in XST.
+     -- Other depths keep an explicit full-width bounds check.
+     ----------------------------------------------------------------
+-    GEN_BUFFER_POWER_OF_TWO : if (2 ** INDEX_WIDTH) = NUM_INPUTS generate
++    GEN_BUFFER_POWER_OF_TWO : if (not OPTIMIZE_FOUR_INPUT_READ or NUM_INPUTS /= 4) and
++                                 (2 ** INDEX_WIDTH) = NUM_INPUTS generate
+         process(buffer_reg, read_index)
+         begin
+             -- synthesis translate_off
+@@ -94,7 +139,8 @@
+         end process;
+     end generate;
+ 
+-    GEN_BUFFER_NON_POWER_OF_TWO : if (2 ** INDEX_WIDTH) /= NUM_INPUTS generate
++    GEN_BUFFER_NON_POWER_OF_TWO : if (not OPTIMIZE_FOUR_INPUT_READ or NUM_INPUTS /= 4) and
++                                     (2 ** INDEX_WIDTH) /= NUM_INPUTS generate
+         process(buffer_reg, read_index)
+             variable idx : integer;
+         begin
+--- architectures/pipeline-4mac/rtl/NN_Accelerator_4MAC_DualPort.vhd
++++ architectures/one-hot-4mac/rtl/NN_Accelerator_4MAC_DualPort.vhd
+@@ -149,7 +149,8 @@
+         generic map (
+             DATA_WIDTH => 16,
+             NUM_INPUTS => NUM_INPUTS,
+-            ADDR_WIDTH => 6
++            ADDR_WIDTH => 6,
++            OPTIMIZE_FOUR_INPUT_READ => true
+         )
+         port map (
+             clk         => clk,

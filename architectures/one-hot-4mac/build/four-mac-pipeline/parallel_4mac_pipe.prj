@@ -1,0 +1,9 @@
+vhdl work ../../rtl/Input_Memory_Generic.vhd
+vhdl work ../../rtl/Input_Register_Buffer.vhd
+vhdl work ../../rtl/Weight_Memory_DualPort_Generic.vhd
+vhdl work ../../rtl/Scheduler_4MAC_DualPort.vhd
+vhdl work ../../rtl/MAC_Array_Optimized_Masked.vhd
+vhdl work ../../rtl/Output_Layer_1MAC_Pipelined.vhd
+vhdl work ../../rtl/NN_Accelerator_4MAC_DualPort.vhd
+vhdl work ../../rtl/NN_Accelerator_4x8x1_DualPort.vhd
+vhdl work ../../top/NN_Accelerator_4x8x1_Synth_Top.vhd

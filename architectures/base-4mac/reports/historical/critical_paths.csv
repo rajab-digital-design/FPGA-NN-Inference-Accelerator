@@ -1,0 +1,11 @@
+﻿rank_in_report,setup_slack_ns,source_register,destination_register,required_period_ns,data_path_delay_ns,logic_levels,total_path_ns,logic_delay_ns,route_delay_ns
+1,-0.932,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.432,10,17.432,11.496,5.936
+2,-0.914,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.414,10,17.414,11.496,5.918
+3,-0.913,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_30,16.500,17.413,10,17.413,11.477,5.936
+4,-0.900,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.400,12,17.400,11.469,5.931
+5,-0.895,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_30,16.500,17.395,10,17.395,11.477,5.918
+6,-0.882,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.382,12,17.382,11.469,5.913
+7,-0.881,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_30,16.500,17.381,12,17.381,11.450,5.931
+8,-0.863,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_30,16.500,17.363,12,17.363,11.450,5.913
+9,-0.859,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.359,11,17.359,11.400,5.959
+10,-0.858,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,16.500,17.358,10,17.358,11.413,5.945

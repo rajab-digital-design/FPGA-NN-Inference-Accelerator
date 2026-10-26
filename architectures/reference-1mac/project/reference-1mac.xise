@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+  <header>Generated from the archived compile order; no ISE GUI execution has been claimed.</header>
+  <version xil_pn:ise_version="14.7" xil_pn:schema_version="2" />
+  <files>
+    <file xil_pn:name="../rtl/Input_Memory_Generic.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="1" />
+    </file>
+    <file xil_pn:name="../rtl/Input_Register_Buffer.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="2" />
+    </file>
+    <file xil_pn:name="../rtl/Weight_Memory_DualPort_Generic.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="3" />
+    </file>
+    <file xil_pn:name="../rtl/Output_Layer_1MAC_Sequential.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="4" />
+    </file>
+    <file xil_pn:name="../rtl/NN_Accelerator_1MAC_Hidden_Sequential.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="5" />
+    </file>
+    <file xil_pn:name="../rtl/NN_Accelerator_1x8x1_Sequential.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="6" />
+    </file>
+    <file xil_pn:name="../top/NN_Accelerator_1x8x1_Synth_Top.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="Implementation" xil_pn:seqID="7" />
+    </file>
+    <file xil_pn:name="../constraints/reference_clock_20ns.ucf" xil_pn:type="FILE_UCF">
+      <association xil_pn:name="Implementation" xil_pn:seqID="0" />
+    </file>
+  </files>
+  <properties>
+    <property xil_pn:name="Device" xil_pn:value="xc3s400" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Device Family" xil_pn:value="Spartan3" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Package" xil_pn:value="PQ208" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Speed Grade" xil_pn:value="-4" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Synthesis Tool" xil_pn:value="XST (VHDL/Verilog)" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Preferred Language" xil_pn:value="VHDL" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Top-Level Source Type" xil_pn:value="HDL" xil_pn:valueState="non-default" />
+    <property xil_pn:name="VHDL Source analysis Standard" xil_pn:value="VHDL-93" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Use Timing Constraints" xil_pn:value="true" xil_pn:valueState="non-default" />
+    <property xil_pn:name="Auto Implementation Compile Order" xil_pn:value="true" xil_pn:valueState="non-default" />
+  </properties>
+  <bindings />
+  <libraries />
+  <autoManagedFiles />
+</project>

@@ -1,0 +1,13 @@
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=12, margin="0.22,0.13"];
+ edge [color="#66778A", penwidth=1.6, arrowsize=.85];
+ next [label="Scheduler\nnext-address logic", fillcolor="#EAF1FF"];
+ r1 [label="input_addr_r\ncontrol/debug register", fillcolor="#FFF3DF"];
+ r2 [label="input_addr_buffer_r\nindependent buffer address register", fillcolor="#DDF4E3", color="#459B64", penwidth=2];
+ control [label="Control / debug logic"];
+ buffer [label="Input buffer\nselect x1 ... x4"];
+ mac [label="Four parallel MAC lanes\nMultiplier -> accumulator"];
+ next -> r1; next -> r2; r1 -> control; r2 -> buffer -> mac;
+ { rank=same; r1; r2; }
+}

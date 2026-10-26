@@ -1,0 +1,13 @@
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=12, margin="0.22,0.13"];
+ edge [color="#66778A", penwidth=1.6, arrowsize=.85];
+ project [label="Project Navigator\nOpen the branch .xise project", fillcolor="#E6F0FF"];
+ source [label="Sources / Implementation\nSelect the synthesis top module"];
+ synth [label="Synthesize - XST\nInspect RTL schematic"];
+ translate [label="Translate / NGDBuild"];
+ map [label="MAP\nLogic-to-device resource mapping"];
+ par [label="Place & Route\nPlacement and routing"];
+ trce [label="Timing analysis / TRACE\nMinimum period and setup slack", fillcolor="#DDF4E3"];
+ project -> source -> synth -> translate -> map -> par -> trce;
+}

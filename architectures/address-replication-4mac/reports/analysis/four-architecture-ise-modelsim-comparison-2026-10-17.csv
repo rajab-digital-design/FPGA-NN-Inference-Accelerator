@@ -1,0 +1,5 @@
+﻿architecture,minimum_period_ns,worst_setup_slack_ns,compute_window_cycles,MAP_slices,MAP_FFs,MAP_LUT4s,MAP_MULT18X18s,critical_logic_levels,critical_logic_ns,critical_route_ns,setup_16p5ns_status,critical_startpoint,critical_endpoint,Fmax_calculated_MHz,cycle_x_minperiod_ns_hypothetical
+Base / Sequential Output,17.432,-0.932,17,967,782,1377,6,10,11.496,5.936,FAIL,UUT/hidden_r4_19,UUT/OUTPUT/acc_r_31,57.365764,296.344
+Pipeline / Reference,16.084,0.416,19,986,849,1406,6,7,8.296,7.788,PASS,UUT/HIDDEN/SCHEDULER/input_addr_r_1_1,UUT/HIDDEN/MAC_ARRAY/acc1_r_19,62.173589,305.596
+One-Hot / Experimental,16.355,0.145,19,1019,911,1410,6,6,8.336,8.001,PASS,UUT/HIDDEN/SCHEDULER/input_addr_r_0,UUT/HIDDEN/MAC_ARRAY/acc3_r_19,61.143381,310.745
+Address Replica / Fanout,15.104,1.396,19,994,853,1419,6,9,8.185,6.919,PASS,UUT/HIDDEN/SCHEDULER/input_addr_buffer_r_1,UUT/HIDDEN/MAC_ARRAY/acc1_r_19,66.207627,286.976

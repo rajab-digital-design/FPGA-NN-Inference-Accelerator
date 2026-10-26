@@ -1,0 +1,18 @@
+Metric,Unit,Sequential_1MAC,Parallel_4MAC,Source report,Notes
+Device,,,,,XC3S400-4PQ208 speed grade -4
+Synthesis tool/version,,,,,Record exact ISE 14.7 VM version
+LUTs,,, ,XST synthesis report,
+Slice registers (FFs),,,,XST synthesis report,
+Occupied slices,,,,MAP report,
+Bonded IOBs,,,,MAP report,Compare only after same wrapper interface
+Block RAM (RAMB16),,,,XST/MAP report,
+Dedicated multipliers (MULT18X18),,,,XST/MAP report,Spartan-3 uses MULT18X18 terminology; not DSP48
+Maximum clock frequency (MHz),,,,TRACE timing report,Only if derived from a complete timing report
+Minimum period (ns),,,,TRACE timing report,Record the reported value and path
+Worst setup slack (ns),,,,TRACE timing report,Reference constraint = 20 ns
+Compute latency (cycles),cycles,48,17,modelsim benchmark,Does not include configuration/loading
+Compute latency (reference ns),ns,960,340,Computed at 20 ns target only,Not measured silicon latency
+End-to-end compute speedup,x,1,2.823529,modelsim benchmark,17 versus 48 cycles
+Latency reduction,%,0,64.5833,modelsim benchmark,Relative to sequential compute window
+Hidden-layer MAC-cycle speedup,x,1,4.0,modelsim benchmark,32 versus 8 MAC cycles
+Observed board result,,,,,Not measured; no physical board access

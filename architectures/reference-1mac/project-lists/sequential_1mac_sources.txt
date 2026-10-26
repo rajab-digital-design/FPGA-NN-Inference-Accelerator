@@ -1,0 +1,11 @@
+Add these files to the 1-MAC project in this order (VHDL-2002):
+../rtl/Input_Memory_Generic.vhd
+../rtl/Input_Register_Buffer.vhd
+../rtl/Weight_Memory_DualPort_Generic.vhd
+../rtl/Output_Layer_1MAC_Sequential.vhd
+../rtl/NN_Accelerator_1MAC_Hidden_Sequential.vhd
+../rtl/NN_Accelerator_1x8x1_Sequential.vhd
+../top/NN_Accelerator_1x8x1_Synth_Top.vhd
+
+Top module: nn_accelerator_1x8x1_synth_top
+Constraint: ../constraints/reference_clock_20ns.ucf

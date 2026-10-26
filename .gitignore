@@ -1,0 +1,40 @@
+# ModelSim work products (preserve archived transcripts under reports/)
+**/work/
+**/transcript
+**/vsim.wlf
+**/*.wlf
+**/*.vcd
+**/modelsim.ini
+
+# Generated Xilinx ISE artifacts when building locally (historical reports remain tracked under reports/)
+**/build/**/implementation_output/
+**/build/**/xst/
+**/build/**/ngdbuild/
+**/build/**/map/
+**/build/**/par/
+**/build/**/trace/
+**/build/**/*.ngc
+**/build/**/*.ngd
+**/build/**/*.ncd
+**/build/**/*.ngm
+**/build/**/*.bld
+**/build/**/*.map
+**/build/**/*.mrp
+**/build/**/*.par
+**/build/**/*.pad
+**/build/**/*.pcf
+**/build/**/*.twx
+**/build/**/*.twr
+**/build/**/*.xrpt
+**/build/**/*.syr
+**/build/**/*.xpi
+**/build/**/*.unroutes
+**/build/**/*.bak
+**/build/**/*.log
+
+# Editor / operating-system noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

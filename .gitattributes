@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep source files diff-friendly across Windows and Linux
+*.vhd text eol=lf
+*.vhdl text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.tcl text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
+*.bat text eol=crlf

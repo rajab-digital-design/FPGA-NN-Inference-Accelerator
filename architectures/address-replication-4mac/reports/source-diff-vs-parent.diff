@@ -1,0 +1,98 @@
+# Parent architecture: pipeline-4mac
+# Interpretation: Scheduler address replica for Input Buffer while original address remains for control/debug. Original input selection retained.
+# NOTE: no RTL files modified when creating this diff.
+--- architectures/pipeline-4mac/rtl/Scheduler_4MAC_DualPort.vhd
++++ architectures/address-replication-4mac/rtl/Scheduler_4MAC_DualPort.vhd
+@@ -13,6 +13,9 @@
+         start : in std_logic;
+ 
+         input_addr : out unsigned(5 downto 0);
++        -- Separate registered copy of the address used only by INPUT_BUFFER.
++        -- It advances on exactly the same cycles as input_addr.
++        buffer_read_addr : out unsigned(5 downto 0);
+         weight_addr : out unsigned(7 downto 0);
+         prefetch_addr : out unsigned(7 downto 0);
+         prefetch_en : out std_logic;
+@@ -43,6 +46,13 @@
+     signal state : state_t := IDLE;
+ 
+     signal input_addr_r : unsigned(5 downto 0) := (others => '0');
++    signal input_addr_buffer_r : unsigned(5 downto 0) := (others => '0');
++    -- XST constraints: keep this physical candidate distinct from the
++    -- control/debug counter. Confirm preservation in .syr/.mrp after XST/MAP.
++    attribute equivalent_register_removal : string;
++    attribute equivalent_register_removal of input_addr_buffer_r : signal is "no";
++    attribute keep : string;
++    attribute keep of input_addr_buffer_r : signal is "true";
+     signal weight_addr_r : unsigned(7 downto 0) := (others => '0');
+     signal prefetch_addr_r : unsigned(7 downto 0) := (others => '0');
+ 
+@@ -59,6 +69,7 @@
+             if rst = '1' then
+                 state <= IDLE;
+                 input_addr_r <= (others => '0');
++                input_addr_buffer_r <= (others => '0');
+                 weight_addr_r <= (others => '0');
+                 prefetch_addr_r <= (others => '0');
+                 group_idx <= 0;
+@@ -82,6 +93,7 @@
+                         running_r <= '1';
+                         group_idx <= 0;
+                         input_addr_r <= (others => '0');
++                        input_addr_buffer_r <= (others => '0');
+                         weight_addr_r <= (others => '0');
+ 
+                         if NUM_GROUPS > 1 then
+@@ -135,6 +147,7 @@
+ 
+                             group_idx <= next_group;
+                             input_addr_r <= (others => '0');
++                            input_addr_buffer_r <= (others => '0');
+                             weight_addr_r <= to_unsigned(next_base + 1, 8);
+ 
+                             if next_group < NUM_GROUPS-1 then
+@@ -153,6 +166,7 @@
+                         end if;
+                     else
+                         input_addr_r <= input_addr_r + 1;
++                        input_addr_buffer_r <= input_addr_buffer_r + 1;
+                         weight_addr_r <= weight_addr_r + 1;
+                     end if;
+                 end if;
+@@ -161,6 +175,7 @@
+     end process;
+ 
+     input_addr <= input_addr_r;
++    buffer_read_addr <= input_addr_buffer_r;
+     weight_addr <= weight_addr_r;
+     prefetch_addr <= prefetch_addr_r;
+     current_group <= group_idx;
+--- architectures/pipeline-4mac/rtl/NN_Accelerator_4MAC_DualPort.vhd
++++ architectures/address-replication-4mac/rtl/NN_Accelerator_4MAC_DualPort.vhd
+@@ -62,6 +62,7 @@
+ 
+     signal scheduler_start : std_logic := '0';
+     signal scheduler_input_addr : unsigned(5 downto 0);
++    signal scheduler_buffer_read_addr : unsigned(5 downto 0);
+     signal scheduler_weight_addr : unsigned(7 downto 0);
+     signal scheduler_prefetch_addr : unsigned(7 downto 0);
+     signal scheduler_prefetch_en : std_logic;
+@@ -236,6 +237,7 @@
+             start => scheduler_start,
+ 
+             input_addr => scheduler_input_addr,
++            buffer_read_addr => scheduler_buffer_read_addr,
+             weight_addr => scheduler_weight_addr,
+             prefetch_addr => scheduler_prefetch_addr,
+             prefetch_en => scheduler_prefetch_en,
+@@ -335,7 +337,9 @@
+     end process;
+ 
+     done <= scheduler_done;
+-    input_compute_index <= scheduler_input_addr;
++    -- Dedicated address FFs drive the buffer read mux. Control/debug
++    -- continue to use the original counter. No extra pipeline stage.
++    input_compute_index <= scheduler_buffer_read_addr;
+ 
+     weight_b_addr_sel <= scheduler_prefetch_addr when scheduler_running = '1' else cfg_weight_rd_addr;
+     weight_b_en_sel <= scheduler_prefetch_en or cfg_weight_rd_en;

@@ -1,0 +1,11 @@
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=13, margin="0.22,0.13"];
+ edge [color="#66778A", penwidth=1.6, arrowsize=.85];
+ a [label="Binary address", fillcolor="#FFF2DA"];
+ d [label="2-to-4 decoder\nOne-hot select", fillcolor="#F3E7FF"];
+ in [label="Four Q8.8 input words", fillcolor="#ECF4FF"];
+ mask [label="Parallel AND masks\nOR-reduction", fillcolor="#EDF7EE"];
+ out [label="Selected buffer word", fillcolor="#BDECD1"];
+ a -> d -> mask; in -> mask; mask -> out;
+}

@@ -1,0 +1,10 @@
+# Xilinx ISE 14.7 / XST synthesis script
+# Part: Spartan-3 XC3S400, package PQ208, speed grade -4
+# Same XST defaults/options are used for both implementations.
+run
+-ifn sequential_1mac.prj
+-ifmt VHDL
+-ofn sequential_1mac
+-ofmt NGC
+-p xc3s400-4-pq208
+-top nn_accelerator_1x8x1_synth_top

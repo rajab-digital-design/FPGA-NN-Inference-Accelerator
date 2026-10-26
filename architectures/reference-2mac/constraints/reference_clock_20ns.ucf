@@ -1,0 +1,5 @@
+# Reference timing constraint for internal implementation comparison.
+# 20 ns corresponds to a 50 MHz target clock. This is not a board clock claim.
+# No LOC constraints are provided because the exact board pinout is unavailable.
+NET "clk" TNM_NET = "clk_grp";
+TIMESPEC "TS_clk" = PERIOD "clk_grp" 20 ns HIGH 50%;

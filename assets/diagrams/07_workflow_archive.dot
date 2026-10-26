@@ -1,0 +1,12 @@
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.42", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded,filled", color="#7D8CA0", fillcolor="#F7FAFD", fontname="DejaVu Sans", fontsize=12, margin="0.22,0.13"];
+ edge [color="#66778A", penwidth=1.6, arrowsize=.85];
+ base [label="Base / 4 MAC\n17.432 ns / 17-cycle window", fillcolor="#FFE7E7"];
+ pipe [label="Pipelined output\n16.084 ns / 19-cycle window", fillcolor="#E8F1FF"];
+ one [label="One-Hot input selection\n16.355 ns / 19-cycle window", fillcolor="#FFF1D9"];
+ fan [label="Address-register replication\n15.104 ns / 19-cycle window", fillcolor="#E0F7E7"];
+ base -> pipe [label="Pipeline output stages"];
+ pipe -> one [label="Change input selection", color="#CE9951"];
+ pipe -> fan [label="Replicate address register", color="#469C69"];
+}

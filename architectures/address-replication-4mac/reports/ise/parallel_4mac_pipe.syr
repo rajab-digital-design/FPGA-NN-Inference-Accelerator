@@ -1,0 +1,1041 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> --> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "parallel_4mac_pipe.prj"
+Input Format                       : VHDL
+
+---- Target Parameters
+Output File Name                   : "parallel_4mac_pipe"
+Output Format                      : NGC
+Target Device                      : xc3s400-4-pq208
+
+---- Source Options
+Top Module Name                    : nn_accelerator_4x8x1_synth_top
+
+=========================================================================
+
+WARNING:Xst:29 - Optimization Effort not specified
+The following parameters have been added:
+Optimization Goal                  : SPEED
+
+=========================================================================
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Input_Memory_Generic.vhd" in Library work.
+Entity <input_memory_generic> compiled.
+Entity <input_memory_generic> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Input_Register_Buffer.vhd" in Library work.
+Entity <input_register_buffer> compiled.
+Entity <input_register_buffer> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Weight_Memory_DualPort_Generic.vhd" in Library work.
+Entity <weight_memory_dualport_generic> compiled.
+Entity <weight_memory_dualport_generic> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Scheduler_4MAC_DualPort.vhd" in Library work.
+Entity <scheduler_4mac_dualport> compiled.
+Entity <scheduler_4mac_dualport> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/MAC_Array_Optimized_Masked.vhd" in Library work.
+Entity <mac_array_optimized_masked> compiled.
+Entity <mac_array_optimized_masked> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4MAC_DualPort.vhd" in Library work.
+Entity <nn_accelerator_4mac_dualport> compiled.
+Entity <nn_accelerator_4mac_dualport> (Architecture <structural>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Output_Layer_1MAC_Pipelined.vhd" in Library work.
+Entity <output_layer_1mac_pipelined> compiled.
+Entity <output_layer_1mac_pipelined> (Architecture <rtl>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd" in Library work.
+Entity <nn_accelerator_4x8x1_dualport> compiled.
+Entity <nn_accelerator_4x8x1_dualport> (Architecture <structural>) compiled.
+Compiling vhdl file "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" in Library work.
+Entity <nn_accelerator_4x8x1_synth_top> compiled.
+Entity <nn_accelerator_4x8x1_synth_top> (Architecture <structural>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <nn_accelerator_4x8x1_synth_top> in library <work> (architecture <structural>).
+
+Analyzing hierarchy for entity <nn_accelerator_4x8x1_dualport> in library <work> (architecture <structural>).
+
+Analyzing hierarchy for entity <nn_accelerator_4mac_dualport> in library <work> (architecture <structural>) with generics.
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+
+Analyzing hierarchy for entity <output_layer_1mac_pipelined> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <input_memory_generic> in library <work> (architecture <rtl>) with generics.
+	ADDR_WIDTH = 6
+	DATA_WIDTH = 16
+	DEPTH = 4
+
+Analyzing hierarchy for entity <input_register_buffer> in library <work> (architecture <rtl>) with generics.
+	ADDR_WIDTH = 6
+	DATA_WIDTH = 16
+	NUM_INPUTS = 4
+
+Analyzing hierarchy for entity <weight_memory_dualport_generic> in library <work> (architecture <rtl>) with generics.
+	ADDR_WIDTH = 8
+	DATA_WIDTH = 16
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+
+Analyzing hierarchy for entity <scheduler_4mac_dualport> in library <work> (architecture <rtl>) with generics.
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+
+Analyzing hierarchy for entity <mac_array_optimized_masked> in library <work> (architecture <rtl>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <nn_accelerator_4x8x1_synth_top> in library <work> (Architecture <structural>).
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n1' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n2' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n3' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n4' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n5' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n6' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n7' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'hidden_n8' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n1' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n2' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n3' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n4' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n5' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n6' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n7' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'relu_n8' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'output_running' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'output_mac_index' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'debug_hidden_running' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'debug_hidden_group' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'debug_hidden_first_cycle' of component 'nn_accelerator_4x8x1_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd" line 31: Unconnected output port 'debug_hidden_prefetch_en' of component 'nn_accelerator_4x8x1_dualport'.
+Entity <nn_accelerator_4x8x1_synth_top> analyzed. Unit <nn_accelerator_4x8x1_synth_top> generated.
+
+Analyzing Entity <nn_accelerator_4x8x1_dualport> in library <work> (Architecture <structural>).
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd" line 85: Unconnected output port 'debug_input_addr' of component 'nn_accelerator_4mac_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd" line 85: Unconnected output port 'debug_weight_addr' of component 'nn_accelerator_4mac_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd" line 85: Unconnected output port 'debug_prefetch_addr' of component 'nn_accelerator_4mac_dualport'.
+WARNING:Xst:753 - "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd" line 85: Unconnected output port 'debug_use_prefetch' of component 'nn_accelerator_4mac_dualport'.
+Entity <nn_accelerator_4x8x1_dualport> analyzed. Unit <nn_accelerator_4x8x1_dualport> generated.
+
+Analyzing generic Entity <nn_accelerator_4mac_dualport> in library <work> (Architecture <structural>).
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+Entity <nn_accelerator_4mac_dualport> analyzed. Unit <nn_accelerator_4mac_dualport> generated.
+
+Analyzing generic Entity <input_memory_generic> in library <work> (Architecture <rtl>).
+	ADDR_WIDTH = 6
+	DATA_WIDTH = 16
+	DEPTH = 4
+Entity <input_memory_generic> analyzed. Unit <input_memory_generic> generated.
+
+Analyzing generic Entity <input_register_buffer> in library <work> (Architecture <rtl>).
+	ADDR_WIDTH = 6
+	DATA_WIDTH = 16
+	NUM_INPUTS = 4
+Entity <input_register_buffer> analyzed. Unit <input_register_buffer> generated.
+
+Analyzing generic Entity <weight_memory_dualport_generic> in library <work> (Architecture <rtl>).
+	ADDR_WIDTH = 8
+	DATA_WIDTH = 16
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+Entity <weight_memory_dualport_generic> analyzed. Unit <weight_memory_dualport_generic> generated.
+
+Analyzing generic Entity <scheduler_4mac_dualport> in library <work> (Architecture <rtl>).
+	NUM_INPUTS = 4
+	NUM_NEURONS = 8
+    Set property "equivalent_register_removal = no" for signal <input_addr_buffer_r>.
+    Set user-defined property "KEEP =  true" for signal <input_addr_buffer_r>.
+Entity <scheduler_4mac_dualport> analyzed. Unit <scheduler_4mac_dualport> generated.
+
+Analyzing Entity <mac_array_optimized_masked> in library <work> (Architecture <rtl>).
+Entity <mac_array_optimized_masked> analyzed. Unit <mac_array_optimized_masked> generated.
+
+Analyzing Entity <output_layer_1mac_pipelined> in library <work> (Architecture <rtl>).
+Entity <output_layer_1mac_pipelined> analyzed. Unit <output_layer_1mac_pipelined> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <output_layer_1mac_pipelined>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Output_Layer_1MAC_Pipelined.vhd".
+WARNING:Xst:646 - Signal <product_r<7:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <done>.
+    Found 20-bit 8-to-1 multiplexer for signal <$varindex0000> created at line 170.
+    Found 16-bit 8-to-1 multiplexer for signal <$varindex0001> created at line 177.
+    Found 32-bit register for signal <acc_r>.
+    Found 3-bit up counter for signal <issue_idx_r>.
+    Found 1-bit register for signal <issued_all_r>.
+    Found 20-bit register for signal <operand_hidden_r>.
+    Found 3-bit register for signal <operand_index_r>.
+    Found 1-bit register for signal <operand_valid_r>.
+    Found 16-bit register for signal <operand_weight_r>.
+    Found 3-bit register for signal <product_index_r>.
+    Found 36-bit register for signal <product_r>.
+    Found 20x16-bit multiplier for signal <product_r$mult0000> created at line 112.
+    Found 1-bit register for signal <product_valid_r>.
+    Found 32-bit register for signal <result_r>.
+    Found 32-bit adder for signal <result_r$add0000> created at line 124.
+    Found 1-bit register for signal <running_r>.
+    Found 1-bit register for signal <state<0>>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 148 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred  36 Multiplexer(s).
+Unit <output_layer_1mac_pipelined> synthesized.
+
+
+Synthesizing Unit <input_memory_generic>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Input_Memory_Generic.vhd".
+    Found 4x16-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 16-bit register for signal <data_out>.
+    Found 6-bit comparator less for signal <and0000$cmp_lt0000> created at line 50.
+    Found 6-bit comparator less for signal <data_out$cmp_lt0000> created at line 55.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <input_memory_generic> synthesized.
+
+
+Synthesizing Unit <input_register_buffer>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Input_Register_Buffer.vhd".
+    Found 4x16-bit dual-port RAM <Mram_buffer_reg> for signal <buffer_reg>.
+    Found 1-bit register for signal <load_done>.
+    Found 6-bit comparator less for signal <data_out$cmp_lt0000> created at line 86.
+    Found 1-bit register for signal <load_active>.
+    Found 6-bit up counter for signal <load_addr_reg>.
+    Found 2-bit up counter for signal <load_count>.
+    Found 1-bit register for signal <load_primed>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <input_register_buffer> synthesized.
+
+
+Synthesizing Unit <weight_memory_dualport_generic>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Weight_Memory_DualPort_Generic.vhd".
+    Found 8x16-bit dual-port RAM <Mram_bank4> for signal <bank4>.
+    Found 8x16-bit dual-port RAM <Mram_bank4_ren> for signal <bank4>.
+    Found 8x16-bit dual-port RAM <Mram_bank2> for signal <bank2>.
+    Found 8x16-bit dual-port RAM <Mram_bank2_ren> for signal <bank2>.
+    Found 8x16-bit dual-port RAM <Mram_bank3> for signal <bank3>.
+    Found 8x16-bit dual-port RAM <Mram_bank3_ren> for signal <bank3>.
+    Found 8x16-bit dual-port RAM <Mram_bank1> for signal <bank1>.
+    Found 8x16-bit dual-port RAM <Mram_bank1_ren> for signal <bank1>.
+    Found 16-bit register for signal <rd_b_weight1>.
+    Found 16-bit register for signal <rd_b_weight2>.
+    Found 16-bit register for signal <rd_b_weight3>.
+    Found 16-bit register for signal <rd_b_weight4>.
+    Found 16-bit register for signal <rd_a_weight1>.
+    Found 16-bit register for signal <rd_a_weight2>.
+    Found 16-bit register for signal <rd_a_weight3>.
+    Found 16-bit register for signal <rd_a_weight4>.
+    Found 8-bit comparator less for signal <and0000$cmp_lt0000> created at line 71.
+    Found 8-bit comparator less for signal <rd_a_weight1$cmp_lt0000> created at line 82.
+    Found 8-bit comparator less for signal <rd_b_weight1$cmp_lt0000> created at line 96.
+    Summary:
+	inferred   8 RAM(s).
+	inferred 128 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <weight_memory_dualport_generic> synthesized.
+
+
+Synthesizing Unit <scheduler_4mac_dualport>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/Scheduler_4MAC_DualPort.vhd".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <start1>.
+    Found 1-bit register for signal <start2>.
+    Found 1-bit register for signal <start3>.
+    Found 1-bit register for signal <start4>.
+    Found 1-bit register for signal <enable1>.
+    Found 1-bit register for signal <enable2>.
+    Found 1-bit register for signal <enable3>.
+    Found 1-bit register for signal <enable4>.
+    Found 1-bit register for signal <done>.
+    Found 8-bit adder carry out for signal <add0000$addsub0000> created at line 145.
+    Found 10-bit adder for signal <enable1$addsub0000> created at line 133.
+    Found 10-bit comparator lessequal for signal <enable1$cmp_le0000> created at line 133.
+    Found 10-bit adder for signal <enable2$addsub0000> created at line 134.
+    Found 10-bit comparator lessequal for signal <enable2$cmp_le0000> created at line 134.
+    Found 10-bit adder for signal <enable3$addsub0000> created at line 135.
+    Found 10-bit comparator lessequal for signal <enable3$cmp_le0000> created at line 135.
+    Found 10-bit adder carry out for signal <enable4$addsub0001> created at line 136.
+    Found 11-bit comparator lessequal for signal <enable4$cmp_le0000> created at line 136.
+    Found 1-bit register for signal <first_cycle_r>.
+    Found 8-bit register for signal <group_idx>.
+    Found 8-bit adder for signal <group_idx$addsub0000> created at line 145.
+    Found 6-bit register for signal <input_addr_buffer_r>.
+    Found 6-bit adder for signal <input_addr_buffer_r$addsub0000> created at line 169.
+    Found 6-bit register for signal <input_addr_r>.
+    Found 6-bit adder for signal <input_addr_r$addsub0000> created at line 168.
+    Found 8-bit register for signal <prefetch_addr_r>.
+    Found 8-bit comparator less for signal <prefetch_en$cmp_lt0000> created at line 186.
+    Found 1-bit register for signal <running_r>.
+    Found 11-bit adder for signal <start1$addsub0000> created at line 159.
+    Found 11-bit comparator lessequal for signal <start1$cmp_le0000> created at line 159.
+    Found 11-bit adder for signal <start2$addsub0000> created at line 160.
+    Found 11-bit comparator lessequal for signal <start2$cmp_le0000> created at line 160.
+    Found 11-bit adder for signal <start3$addsub0000> created at line 161.
+    Found 11-bit comparator lessequal for signal <start3$cmp_le0000> created at line 161.
+    Found 11-bit adder carry out for signal <start4$addsub0001> created at line 162.
+    Found 12-bit comparator lessequal for signal <start4$cmp_le0000> created at line 162.
+    Found 1-bit register for signal <use_prefetch_r>.
+    Found 8-bit register for signal <weight_addr_r>.
+    Found 8-bit adder for signal <weight_addr_r$share0000> created at line 138.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  48 D-type flip-flop(s).
+	inferred  13 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+Unit <scheduler_4mac_dualport> synthesized.
+
+
+Synthesizing Unit <mac_array_optimized_masked>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/MAC_Array_Optimized_Masked.vhd".
+    Found 20-bit register for signal <acc1_r>.
+    Found 20-bit adder for signal <acc1_r$mux0000>.
+    Found 20-bit register for signal <acc2_r>.
+    Found 20-bit adder for signal <acc2_r$mux0000>.
+    Found 20-bit register for signal <acc3_r>.
+    Found 20-bit adder for signal <acc3_r$mux0000>.
+    Found 20-bit register for signal <acc4_r>.
+    Found 20-bit adder for signal <acc4_r$mux0000>.
+    Found 16x16-bit multiplier for signal <scaled1_v$mult0000> created at line 51.
+    Found 16x16-bit multiplier for signal <scaled2_v$mult0000> created at line 52.
+    Found 16x16-bit multiplier for signal <scaled3_v$mult0000> created at line 53.
+    Found 16x16-bit multiplier for signal <scaled4_v$mult0000> created at line 54.
+    Summary:
+	inferred  80 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Multiplier(s).
+Unit <mac_array_optimized_masked> synthesized.
+
+
+Synthesizing Unit <nn_accelerator_4mac_dualport>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4MAC_DualPort.vhd".
+    Found finite state machine <FSM_1> for signal <top_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | top_idle                                       |
+    | Power Up State     | top_idle                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 10-bit comparator less for signal <bias1$cmp_lt0000> created at line 220.
+    Found 10-bit adder for signal <bias2$addsub0000> created at line 221.
+    Found 10-bit comparator less for signal <bias2$cmp_lt0000> created at line 221.
+    Found 10-bit adder for signal <bias3$addsub0000> created at line 222.
+    Found 10-bit comparator less for signal <bias3$cmp_lt0000> created at line 222.
+    Found 10-bit adder for signal <bias4$addsub0000> created at line 223.
+    Found 10-bit comparator less for signal <bias4$cmp_lt0000> created at line 223.
+    Found 128-bit register for signal <bias_mem>.
+    Found 7-bit comparator greatequal for signal <bias_mem_0$cmp_ge0000> created at line 118.
+    Found 7-bit comparator less for signal <cfg_rd_data$cmp_lt0000> created at line 377.
+    Found 16-bit 8-to-1 multiplexer for signal <cfg_rd_data$mux0000> created at line 378.
+    Found 1-bit register for signal <input_load_start>.
+    Found 1-bit register for signal <scheduler_start>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 130 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+	inferred  16 Multiplexer(s).
+Unit <nn_accelerator_4mac_dualport> synthesized.
+
+
+Synthesizing Unit <nn_accelerator_4x8x1_dualport>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../rtl/NN_Accelerator_4x8x1_DualPort.vhd".
+    Found finite state machine <FSM_2> for signal <net_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | net_idle                                       |
+    | Power Up State     | net_idle                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 20-bit register for signal <hidden_r1>.
+    Found 20-bit register for signal <hidden_r2>.
+    Found 20-bit register for signal <hidden_r3>.
+    Found 20-bit register for signal <hidden_r4>.
+    Found 20-bit register for signal <hidden_r5>.
+    Found 20-bit register for signal <hidden_r6>.
+    Found 20-bit register for signal <hidden_r7>.
+    Found 20-bit register for signal <hidden_r8>.
+    Found 16-bit register for signal <output_bias>.
+    Found 1-bit register for signal <output_start>.
+    Found 16-bit register for signal <output_w1>.
+    Found 16-bit register for signal <output_w2>.
+    Found 16-bit register for signal <output_w3>.
+    Found 16-bit register for signal <output_w4>.
+    Found 16-bit register for signal <output_w5>.
+    Found 16-bit register for signal <output_w6>.
+    Found 16-bit register for signal <output_w7>.
+    Found 16-bit register for signal <output_w8>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 305 D-type flip-flop(s).
+Unit <nn_accelerator_4x8x1_dualport> synthesized.
+
+
+Synthesizing Unit <nn_accelerator_4x8x1_synth_top>.
+    Related source file is "C:/FPGA/EXPERIMENT_4MAC_SCHEDULER_READ_REPLICA/runs/four_mac_pipeline/../../top/NN_Accelerator_4x8x1_Synth_Top.vhd".
+Unit <nn_accelerator_4x8x1_synth_top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 10
+ 4x16-bit dual-port RAM                                : 2
+ 8x16-bit dual-port RAM                                : 8
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 4
+ 20x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 21
+ 10-bit adder                                          : 6
+ 10-bit adder carry out                                : 1
+ 11-bit adder                                          : 3
+ 11-bit adder carry out                                : 1
+ 20-bit adder                                          : 4
+ 32-bit adder                                          : 1
+ 6-bit adder                                           : 2
+ 8-bit adder                                           : 2
+ 8-bit adder carry out                                 : 1
+# Counters                                             : 3
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 74
+ 1-bit register                                        : 24
+ 16-bit register                                       : 27
+ 20-bit register                                       : 13
+ 3-bit register                                        : 2
+ 32-bit register                                       : 2
+ 36-bit register                                       : 1
+ 6-bit register                                        : 2
+ 8-bit register                                        : 3
+# Comparators                                          : 21
+ 10-bit comparator less                                : 4
+ 10-bit comparator lessequal                           : 3
+ 11-bit comparator lessequal                           : 4
+ 12-bit comparator lessequal                           : 1
+ 6-bit comparator less                                 : 3
+ 7-bit comparator greatequal                           : 1
+ 7-bit comparator less                                 : 1
+ 8-bit comparator less                                 : 4
+# Multiplexers                                         : 3
+ 16-bit 8-to-1 multiplexer                             : 2
+ 20-bit 8-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <UUT/net_state/FSM> on signal <net_state[1:2]> with user encoding.
+-----------------------------
+ State           | Encoding
+-----------------------------
+ net_idle        | 00
+ net_wait_hidden | 01
+ net_wait_output | 10
+-----------------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <UUT/HIDDEN/top_state/FSM> on signal <top_state[1:2]> with user encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ top_idle       | 00
+ top_wait_input | 01
+ top_run        | 10
+----------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <UUT/HIDDEN/SCHEDULER/state/FSM> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ prime | 01
+ run   | 10
+-------------------
+
+Synthesizing (advanced) Unit <input_memory_generic>.
+INFO:Xst:3231 - The small RAM <Mram_mem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000>      | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_addr>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <input_memory_generic> synthesized (advanced).
+
+Synthesizing (advanced) Unit <input_register_buffer>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_buffer_reg> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <load_primed_0> | high     |
+    |     addrA          | connected to signal <load_count>    |          |
+    |     diA            | connected to signal <mem_data>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     addrB          | connected to signal <read_index>    |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <input_register_buffer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <output_layer_1mac_pipelined>.
+The following registers are absorbed into accumulator <acc_r>: 1 register on signal <acc_r>.
+	Found pipelined multiplier on signal <product_r_mult0000>:
+		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_product_r_mult0000 by adding 1 register level(s).
+Unit <output_layer_1mac_pipelined> synthesized (advanced).
+
+Synthesizing (advanced) Unit <scheduler_4mac_dualport>.
+INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal input_addr_buffer_r may hinder XST clustering optimizations.
+Unit <scheduler_4mac_dualport> synthesized (advanced).
+
+Synthesizing (advanced) Unit <weight_memory_dualport_generic>.
+INFO:Xst:3231 - The small RAM <Mram_bank4_ren> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0000_1> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_a_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank4> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0000_0> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_b_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank2> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0001_0> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_b_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank2_ren> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0001_1> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_a_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank3> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0002_0> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_b_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0003_0> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_b_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank3_ren> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0002_1> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_a_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_bank1_ren> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0003_1> | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <wr_data>       |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 16-bit                     |          |
+    |     addrB          | connected to signal <rd_a_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <weight_memory_dualport_generic> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 3
+# RAMs                                                 : 10
+ 4x16-bit dual-port distributed RAM                    : 2
+ 8x16-bit dual-port distributed RAM                    : 8
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 4
+ 20x16-bit registered multiplier                       : 1
+# Adders/Subtractors                                   : 21
+ 10-bit adder                                          : 6
+ 10-bit adder carry out                                : 1
+ 11-bit adder                                          : 3
+ 11-bit adder carry out                                : 1
+ 20-bit adder                                          : 4
+ 32-bit adder                                          : 1
+ 6-bit adder                                           : 2
+ 8-bit adder                                           : 2
+ 8-bit adder carry out                                 : 1
+# Counters                                             : 3
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 32-bit up loadable accumulator                        : 1
+# Registers                                            : 790
+ Flip-Flops                                            : 790
+# Comparators                                          : 21
+ 10-bit comparator less                                : 4
+ 10-bit comparator lessequal                           : 3
+ 11-bit comparator lessequal                           : 4
+ 12-bit comparator lessequal                           : 1
+ 6-bit comparator less                                 : 3
+ 7-bit comparator greatequal                           : 1
+ 7-bit comparator less                                 : 1
+ 8-bit comparator less                                 : 4
+# Multiplexers                                         : 18
+ 1-bit 8-to-1 multiplexer                              : 16
+ 16-bit 8-to-1 multiplexer                             : 1
+ 20-bit 8-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <operand_hidden_r_19> has a constant value of 0 in block <output_layer_1mac_pipelined>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <prefetch_addr_r_0> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_1> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_3> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_4> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_5> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_6> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <prefetch_addr_r_7> has a constant value of 0 in block <scheduler_4mac_dualport>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_35> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_34> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_33> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_32> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_31> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_30> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_29> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+WARNING:Xst:2677 - Node <Mmult_product_r_mult0000_28> of sequential type is unconnected in block <output_layer_1mac_pipelined>.
+
+Optimizing unit <nn_accelerator_4x8x1_synth_top> ...
+
+Optimizing unit <output_layer_1mac_pipelined> ...
+
+Optimizing unit <input_memory_generic> ...
+
+Optimizing unit <input_register_buffer> ...
+
+Optimizing unit <weight_memory_dualport_generic> ...
+
+Optimizing unit <scheduler_4mac_dualport> ...
+INFO:Xst:2261 - The FF/Latch <enable3> in Unit <scheduler_4mac_dualport> is equivalent to the following 2 FFs/Latches, which will be removed : <enable1> <enable2> 
+INFO:Xst:2261 - The FF/Latch <start1> in Unit <scheduler_4mac_dualport> is equivalent to the following 2 FFs/Latches, which will be removed : <start2> <start3> 
+INFO:Xst:2261 - The FF/Latch <start1> in Unit <scheduler_4mac_dualport> is equivalent to the following FF/Latch, which will be removed : <start4> 
+INFO:Xst:2261 - The FF/Latch <start1> in Unit <scheduler_4mac_dualport> is equivalent to the following FF/Latch, which will be removed : <start4> 
+
+Optimizing unit <mac_array_optimized_masked> ...
+
+Optimizing unit <nn_accelerator_4mac_dualport> ...
+
+Optimizing unit <nn_accelerator_4x8x1_dualport> ...
+WARNING:Xst:2677 - Node <UUT/OUTPUT/running_r> of sequential type is unconnected in block <nn_accelerator_4x8x1_synth_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 853
+ Flip-Flops                                            : 853
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : parallel_4mac_pipe
+Output Format                      : NGC
+Optimization Goal                  : SPEED
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 90
+
+Cell Usage :
+# BELS                             : 1677
+#      BUF                         : 1
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 246
+#      LUT2_D                      : 3
+#      LUT2_L                      : 1
+#      LUT3                        : 333
+#      LUT3_D                      : 3
+#      LUT3_L                      : 60
+#      LUT4                        : 424
+#      LUT4_D                      : 8
+#      LUT4_L                      : 9
+#      MULT_AND                    : 31
+#      MUXCY                       : 156
+#      MUXF5                       : 182
+#      MUXF6                       : 52
+#      VCC                         : 1
+#      XORCY                       : 163
+# FlipFlops/Latches                : 853
+#      FDE                         : 64
+#      FDR                         : 116
+#      FDRE                        : 659
+#      FDRS                        : 13
+#      FDRSE                       : 1
+# RAMS                             : 160
+#      RAM16X1D                    : 160
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 89
+#      IBUF                        : 40
+#      OBUF                        : 49
+# MULTs                            : 6
+#      MULT18X18                   : 6
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400pq208-4 
+
+ Number of Slices:                      869  out of   3584    24%  
+ Number of Slice Flip Flops:            853  out of   7168    11%  
+ Number of 4 input LUTs:               1410  out of   7168    19%  
+    Number used as logic:              1090
+    Number used as RAMs:                320
+ Number of IOs:                          90
+ Number of bonded IOBs:                  90  out of    141    63%  
+ Number of MULT18X18s:                    6  out of     16    37%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1013  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 13.373ns (Maximum Frequency: 74.778MHz)
+   Minimum input arrival time before clock: 12.714ns
+   Maximum output required time after clock: 14.586ns
+   Maximum combinational path delay: 17.916ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 13.373ns (frequency: 74.778MHz)
+  Total number of paths / destination ports: 260517 / 1650
+-------------------------------------------------------------------------
+Delay:               13.373ns (Levels of Logic = 10)
+  Source:            UUT/HIDDEN/SCHEDULER/input_addr_buffer_r_0 (FF)
+  Destination:       UUT/HIDDEN/MAC_ARRAY/acc3_r_19 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: UUT/HIDDEN/SCHEDULER/input_addr_buffer_r_0 to UUT/HIDDEN/MAC_ARRAY/acc3_r_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             25   0.720   1.813  UUT/HIDDEN/SCHEDULER/input_addr_buffer_r_0 (UUT/HIDDEN/SCHEDULER/input_addr_buffer_r<0>)
+     RAM16X1D:DPRA0->DPO    1   0.551   0.996  UUT/HIDDEN/INPUT_BUFFER/Mram_buffer_reg16 (UUT/HIDDEN/INPUT_BUFFER/_varindex0000<15>)
+     LUT2:I1->O           12   0.551   1.118  UUT/HIDDEN/INPUT_BUFFER/data_out<15>1 (UUT/HIDDEN/input_compute_data<15>)
+     MULT18X18:A15->P22    1   4.214   0.996  UUT/HIDDEN/MAC_ARRAY/Mmult_scaled4_v_mult0000 (UUT/HIDDEN/MAC_ARRAY/scaled4_v_mult0000<22>)
+     LUT2:I1->O            1   0.551   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_lut<14> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_lut<14>)
+     MUXCY:S->O            1   0.500   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<14> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<15> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<16> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<17> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<17>)
+     MUXCY:CI->O           0   0.064   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<18> (UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_cy<18>)
+     XORCY:CI->O           1   0.904   0.000  UUT/HIDDEN/MAC_ARRAY/Madd_acc4_r_mux0000_xor<19> (UUT/HIDDEN/MAC_ARRAY/acc4_r_mux0000<19>)
+     FDRE:D                    0.203          UUT/HIDDEN/MAC_ARRAY/acc4_r_19
+    ----------------------------------------
+    Total                     13.373ns (8.450ns logic, 4.923ns route)
+                                       (63.2% logic, 36.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 7048 / 2359
+-------------------------------------------------------------------------
+Offset:              12.714ns (Levels of Logic = 4)
+  Source:            rst (PAD)
+  Destination:       UUT/OUTPUT/done (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to UUT/OUTPUT/done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           350   0.821   3.675  rst_IBUF (rst_IBUF)
+     BUF:I->O            350   0.551   3.870  rst_IBUF_1 (rst_IBUF_1)
+     LUT3:I1->O            1   0.551   0.869  UUT/OUTPUT/done_or0000_SW0 (N10)
+     LUT4:I2->O            1   0.551   0.801  UUT/OUTPUT/done_or0000 (UUT/OUTPUT/done_or0000)
+     FDR:R                     1.026          UUT/OUTPUT/done
+    ----------------------------------------
+    Total                     12.714ns (3.500ns logic, 9.214ns route)
+                                       (27.5% logic, 72.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 561 / 49
+-------------------------------------------------------------------------
+Offset:              14.586ns (Levels of Logic = 7)
+  Source:            UUT/output_bias_15 (FF)
+  Destination:       cfg_rd_data<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: UUT/output_bias_15 to cfg_rd_data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            14   0.720   1.382  UUT/output_bias_15 (UUT/output_bias_15)
+     LUT4:I1->O            2   0.551   0.903  UUT/cfg_rd_data<15>110 (UUT/cfg_rd_data<15>110)
+     LUT4:I3->O            1   0.551   0.000  UUT/cfg_rd_data<15>238_F (N358)
+     MUXF5:I0->O           1   0.360   1.140  UUT/cfg_rd_data<15>238 (UUT/cfg_rd_data<15>238)
+     LUT2:I0->O            2   0.551   1.072  UUT/cfg_rd_data<15>263_SW0 (N262)
+     LUT3:I1->O            1   0.551   0.000  UUT/cfg_rd_data<15>2631 (UUT/cfg_rd_data<15>263)
+     MUXF5:I1->O           1   0.360   0.801  UUT/cfg_rd_data<15>263_f5 (cfg_rd_data_15_OBUF)
+     OBUF:I->O                 5.644          cfg_rd_data_15_OBUF (cfg_rd_data<15>)
+    ----------------------------------------
+    Total                     14.586ns (9.288ns logic, 5.298ns route)
+                                       (63.7% logic, 36.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1072 / 16
+-------------------------------------------------------------------------
+Delay:               17.916ns (Levels of Logic = 9)
+  Source:            cfg_rd_addr<2> (PAD)
+  Destination:       cfg_rd_data<15> (PAD)
+
+  Data Path: cfg_rd_addr<2> to cfg_rd_data<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            83   0.821   2.484  cfg_rd_addr_2_IBUF (cfg_rd_addr_2_IBUF)
+     LUT2:I0->O           16   0.551   1.576  UUT/cfg_rd_data_cmp_eq000821 (UUT/N24)
+     LUT4:I0->O            2   0.551   0.903  UUT/cfg_rd_data<9>110 (UUT/cfg_rd_data<9>110)
+     LUT4:I3->O            1   0.551   0.000  UUT/cfg_rd_data<9>238_F (N322)
+     MUXF5:I0->O           1   0.360   1.140  UUT/cfg_rd_data<9>238 (UUT/cfg_rd_data<9>238)
+     LUT2:I0->O            2   0.551   1.072  UUT/cfg_rd_data<9>263_SW0 (N244)
+     LUT3:I1->O            1   0.551   0.000  UUT/cfg_rd_data<9>2631 (UUT/cfg_rd_data<9>263)
+     MUXF5:I1->O           1   0.360   0.801  UUT/cfg_rd_data<9>263_f5 (cfg_rd_data_9_OBUF)
+     OBUF:I->O                 5.644          cfg_rd_data_9_OBUF (cfg_rd_data<9>)
+    ----------------------------------------
+    Total                     17.916ns (9.940ns logic, 7.976ns route)
+                                       (55.5% logic, 44.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.86 secs
+ 
+--> 
+
+Total memory usage is 299012 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   45 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
+

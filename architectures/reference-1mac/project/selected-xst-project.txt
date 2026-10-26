@@ -1,0 +1,1 @@
+build/sequential/sequential_1mac.prj

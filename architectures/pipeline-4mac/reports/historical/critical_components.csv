@@ -1,0 +1,13 @@
+﻿sequence,stage,delay_type,delay_ns,resource,category
+1,Scheduler address FF clock-to-Q,Tcko,0.720,UUT/HIDDEN/SCHEDULER/input_addr_r_1_1,Logic
+2,Scheduler address route (fanout=16),net,1.062,UUT/HIDDEN/SCHEDULER/input_addr_r_1_1,Route
+3,Input buffer mapped logic,Tilo,0.608,UUT/HIDDEN/INPUT_BUFFER/_varindex0000<2>,Logic
+4,Route to next data stage,net,1.276,UUT/HIDDEN/INPUT_BUFFER/_varindex0000<2>,Route
+5,Input compute data mapped logic,Tilo,0.608,UUT/HIDDEN/input_compute_data<12>,Logic
+6,Route into multiplier (fanout=4),net,3.037,UUT/HIDDEN/input_compute_data<2>,Route
+7,Hardware multiplier,Tmult,4.072,UUT/HIDDEN/MAC_ARRAY/Mmult_scaled1_v_mult0000,Logic
+8,Multiplier output route,net,2.413,UUT/HIDDEN/MAC_ARRAY/scaled1_v_mult0000<20>,Route
+9,Accumulator carry logic,Topcyf,1.027,UUT/HIDDEN/MAC_ARRAY/acc1_r<12>,Logic
+10,Carry bypass,Tbyp,0.128,UUT/HIDDEN/MAC_ARRAY/acc1_r<14>,Logic
+11,Carry bypass,Tbyp,0.128,UUT/HIDDEN/MAC_ARRAY/acc1_r<16>,Logic
+12,Final carry / endpoint timing,Tcinck,1.005,UUT/HIDDEN/MAC_ARRAY/acc1_r_19,Logic
